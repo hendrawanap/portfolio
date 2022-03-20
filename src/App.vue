@@ -1,9 +1,75 @@
 <script setup>
+import { onMounted, ref } from 'vue';
+import Header from './components/CustomHeader.vue';
+import Headline from './components/MyHeadline.vue';
+import AboutMe from './components/AboutMe.vue';
+import FeaturedProject from './components/FeaturedProject.vue';
+import OtherProject from './components/OtherProject.vue';
+import Contact from './components/ContactMe.vue';
+import Footer from './components/CustomFooter.vue';
+
+const headlineRef = ref(null);
+const aboutMeRef = ref(null);
+const featuredProjectRef = ref(null);
+const otherProjectRef = ref(null);
+const contactRef = ref(null);
+const currentSectionId = ref(null);
+const scrollHandler = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const isEnough = entry.intersectionRatio * entry.target.offsetHeight
+        > 0.75 * window.innerHeight;
+      if (entry.intersectionRatio >= 0.75 || isEnough) {
+        currentSectionId.value = entry.target.id;
+      }
+    }
+  });
+};
+function buildThresholdList() {
+  const thresholds = [];
+  const numSteps = 10;
+
+  for (let i = 1.0; i <= numSteps; i += 1) {
+    const ratio = i / numSteps;
+    thresholds.push(ratio);
+  }
+
+  thresholds.push(0);
+  return thresholds;
+}
+
+const observer = new IntersectionObserver(scrollHandler, {
+  root: document, threshold: buildThresholdList(),
+});
+
+onMounted(() => {
+  observer.observe(aboutMeRef.value.$el);
+  observer.observe(featuredProjectRef.value.$el);
+  observer.observe(contactRef.value.$el);
+});
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">Hello World!</h1>
+  <div id="root">
+    <Header :current-section-id="currentSectionId"/>
+    <main class="px-8 container mx-auto">
+      <Headline class="mt-20" id="headline" ref="headlineRef"/>
+      <AboutMe class="mt-24" id="about-me" ref="aboutMeRef"/>
+      <FeaturedProject class="mt-24" id="featured-projects" ref="featuredProjectRef"/>
+      <OtherProject id="other-projects" ref="otherProjectRef"/>
+      <Contact class="my-24" id="contact-me" ref="contactRef"/>
+    </main>
+    <Footer/>
+  </div>
 </template>
 
 <style>
+body {
+  font-family: 'Outfit', Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body .mono {
+  font-family: 'Oxygen Mono', Courier, monospace;
+}
 </style>
