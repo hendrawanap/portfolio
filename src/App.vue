@@ -25,9 +25,9 @@ const scrollHandler = (entries, observer) => {
     }
   });
 };
-function buildThresholdList() {
+const buildThresholdList = ({ steps } = { steps: 10 }) => {
   const thresholds = [];
-  const numSteps = 10;
+  const numSteps = steps;
 
   for (let i = 1.0; i <= numSteps; i += 1) {
     const ratio = i / numSteps;
@@ -36,7 +36,7 @@ function buildThresholdList() {
 
   thresholds.push(0);
   return thresholds;
-}
+};
 
 const observer = new IntersectionObserver(scrollHandler, {
   root: document, threshold: buildThresholdList(),
@@ -45,6 +45,7 @@ const observer = new IntersectionObserver(scrollHandler, {
 onMounted(() => {
   observer.observe(aboutMeRef.value.$el);
   observer.observe(featuredProjectRef.value.$el);
+  observer.observe(otherProjectRef.value.$el);
   observer.observe(contactRef.value.$el);
 });
 </script>
