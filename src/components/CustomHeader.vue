@@ -2,10 +2,14 @@
 import { onMounted, onUpdated, ref } from 'vue';
 
 const props = defineProps(['currentSectionId']);
-const navList = ref(null);
 const headerRef = ref(null);
 const isNavOpen = ref(false);
 const currentSection = ref(null);
+const navList = [
+  { sectionIds: ['about-me'], title: 'About' },
+  { sectionIds: ['featured-projects', 'other-projects'], title: 'Projects' },
+  { sectionIds: ['contact-me'], title: 'Contact' },
+];
 
 const toggleNav = () => {
   isNavOpen.value = !isNavOpen.value;
@@ -55,38 +59,19 @@ onMounted(() => {
         class="fixed top-0 bottom-0 right-0 bg-[#1E1E1E] z-50 w-1/2 justify-center
           flex flex-col text-white text-opacity-80 transition-all text-center"
         :class="[isNavOpen ? '' : 'translate-x-full']"
-        :ref="navList"
         @click="toggleNav"
       >
         <li
+          v-for="nav, index in navList"
+          :key="'nav'+index"
           class="px-4"
-          :class="[currentSection === 'about-me' ? 'bg-white bg-opacity-5' : '']"
+          :class="[nav.sectionIds.includes(currentSection) ? 'bg-white bg-opacity-5' : '']"
           @click="() => {
             hideNavbar();
-            setCurrentSection('about-me');
+            setCurrentSection(nav.sectionIds[0]);
           }"
         >
-          <a class="text-lg my-2 block w-full" href="#about-me">About</a>
-        </li>
-        <li
-          class="px-4"
-          :class="[currentSection === 'featured-projects' ? 'bg-white bg-opacity-5' : '']"
-          @click="() => {
-            hideNavbar();
-            setCurrentSection('featured-projects');
-          }"
-        >
-          <a class="text-lg my-2 block w-full" href="#featured-projects">Project</a>
-        </li>
-        <li
-          class="px-4"
-          :class="[currentSection === 'contact-me' ? 'bg-white bg-opacity-5' : '']"
-          @click="() => {
-            hideNavbar();
-            setCurrentSection('contact-me');
-          }"
-        >
-          <a class="text-lg my-2 block w-full" href="#contact-me">Contact</a>
+          <a class="text-lg my-2 block w-full" :href="`#${nav.sectionIds[0]}`">{{ nav.title }}</a>
         </li>
         <li class="px-4">
           <a class="text-lg my-2 block w-full" href="#">My Resume</a>
