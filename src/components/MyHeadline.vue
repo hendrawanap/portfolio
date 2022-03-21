@@ -16,7 +16,7 @@
     <a
       class="text-primary text-opacity-80 py-3 px-6 text-sm md:text-base
       border border-primary rounded-sm inline-block"
-      href="#featured-project"
+      href="#featured-projects"
     >
       View my projects
     </a>
