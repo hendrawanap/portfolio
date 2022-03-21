@@ -25,6 +25,7 @@ const setCurrentSection = (section) => {
 };
 
 const hideNavbar = () => {
+  toggleNav();
   setTimeout(() => headerRef.value.classList.add('-translate-y-full'), 100);
 };
 
@@ -59,7 +60,6 @@ onMounted(() => {
         class="fixed top-0 bottom-0 right-0 bg-[#1E1E1E] z-50 w-1/2 justify-center
           flex flex-col text-white text-opacity-80 transition-all text-center"
         :class="[isNavOpen ? '' : 'translate-x-full']"
-        @click="toggleNav"
       >
         <li
           v-for="nav, index in navList"
@@ -74,7 +74,13 @@ onMounted(() => {
           <a class="text-lg my-2 block w-full" :href="`#${nav.sectionIds[0]}`">{{ nav.title }}</a>
         </li>
         <li class="px-4">
-          <a class="text-lg my-2 block w-full" href="#">My Resume</a>
+          <a
+            class="text-lg text-primary my-6 block w-full
+              border border-primary px-4 py-2 rounded-sm"
+            href="#"
+          >
+            My Resume
+          </a>
         </li>
       </ul>
     </nav>
