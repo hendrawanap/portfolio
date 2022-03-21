@@ -24,7 +24,7 @@ const otherProjects = [
 
 <template>
  <section>
-    <h4 class="text-white text-opacity-80 text-lg font-semibold text-center mb-6">
+    <h4 class="text-opacity-80 text-center mb-6">
       Other Projects.
     </h4>
     <OtherProjectCard

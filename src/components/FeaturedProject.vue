@@ -42,7 +42,7 @@ const featuredProjects = [
       <svg class="mr-3 mt-1" height="2" width="32">
         <line class="stroke-primary stroke-2" x1="0" y1="0" x2="32" y2="0" />
       </svg>
-      <h4 class="text-white text-opacity-80 text-lg font-semibold">Things I've Built.</h4>
+      <h4 class="text-opacity-80">Things I've Built.</h4>
     </div>
     <FeaturedProjectCard
       v-for="featuredProject, index in featuredProjects"

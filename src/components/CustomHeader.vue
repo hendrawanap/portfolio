@@ -58,13 +58,13 @@ onMounted(() => {
     <nav>
       <ul
         class="fixed top-0 bottom-0 right-0 bg-[#1E1E1E] z-50 w-1/2 justify-center
-          flex flex-col text-white text-opacity-80 transition-all text-center"
+          flex flex-col transition-all text-center"
         :class="[isNavOpen ? '' : 'translate-x-full']"
       >
         <li
           v-for="nav, index in navList"
           :key="'nav'+index"
-          class="px-4"
+          class="px-4 text-opacity-80"
           :class="[nav.sectionIds.includes(currentSection) ? 'bg-white bg-opacity-5' : '']"
           @click="() => {
             hideNavbar();

@@ -35,15 +35,15 @@ const socials = [
         <li
           v-for="social, index in socials"
           :key="'social-'+index"
-          class="text-white text-opacity-50 mx-2"
+          class="text-opacity-50 mx-2"
         >
           <a class="social" :href="social.url">
             <span v-html="social.icon"></span>
           </a>
         </li>
       </ul>
-      <p class="text-xs text-white text-opacity-50 text-center">Built by Hendrawan Anantha</p>
-      <p class="text-xs text-white text-opacity-25 text-center">updated on March 2022</p>
+      <p class="text-xs text-opacity-50 text-center">Built by Hendrawan Anantha</p>
+      <p class="text-xs text-opacity-25 text-center">updated on March 2022</p>
     </div>
   </footer>
 </template>

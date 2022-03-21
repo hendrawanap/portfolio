@@ -70,7 +70,32 @@ body {
   scroll-behavior: smooth;
 }
 
+body h1,
+body h2,
+body h3,
+body h4,
+body p,
+body ul li,
+body li,
+body label,
+body input,
+body textarea {
+  @apply text-white
+}
+
 body .mono {
   font-family: 'Oxygen Mono', Courier, monospace;
+}
+
+body h2 {
+  @apply text-4xl font-semibold;
+}
+
+body h4 {
+  @apply text-lg font-semibold;
+}
+
+body p {
+  @apply text-sm;
 }
 </style>
