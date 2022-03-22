@@ -54,11 +54,11 @@ onMounted(() => {
   <div id="root">
     <Header :current-section-id="currentSectionId"/>
     <main class="px-8 container mx-auto">
-      <Headline class="mt-20" id="headline" ref="headlineRef"/>
-      <AboutMe class="mt-24" id="about-me" ref="aboutMeRef"/>
-      <FeaturedProject class="mt-24" id="featured-projects" ref="featuredProjectRef"/>
+      <Headline class="pt-20" id="headline" ref="headlineRef"/>
+      <AboutMe class="mt-16 pt-20" id="about-me" ref="aboutMeRef"/>
+      <FeaturedProject class="mt-16 pt-20" id="featured-projects" ref="featuredProjectRef"/>
       <OtherProject id="other-projects" ref="otherProjectRef"/>
-      <Contact class="my-24" id="contact-me" ref="contactRef"/>
+      <Contact class="my-16 pt-20" id="contact-me" ref="contactRef"/>
     </main>
     <Footer/>
   </div>

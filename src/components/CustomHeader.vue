@@ -10,6 +10,8 @@ const navList = [
   { sectionIds: ['featured-projects', 'other-projects'], title: 'Projects' },
   { sectionIds: ['contact-me'], title: 'Contact' },
 ];
+const currentScrollPosition = ref(null);
+const triggeredFromNav = ref(false);
 
 const toggleNav = () => {
   isNavOpen.value = !isNavOpen.value;
@@ -24,9 +26,12 @@ const setCurrentSection = (section) => {
   currentSection.value = section;
 };
 
+const showNavbar = () => {
+  headerRef.value.classList.remove('-translate-y-full');
+};
+
 const hideNavbar = () => {
-  toggleNav();
-  setTimeout(() => headerRef.value.classList.add('-translate-y-full'), 100);
+  headerRef.value.classList.add('-translate-y-full');
 };
 
 onUpdated(() => {
@@ -36,14 +41,19 @@ onUpdated(() => {
 });
 
 onMounted(() => {
-  window.onwheel = (e) => {
-    if (!isNavOpen.value) {
-      if (e.wheelDeltaY < 0) {
-        headerRef.value.classList.add('-translate-y-full');
+  window.onscroll = () => {
+    if (!triggeredFromNav.value) {
+      if (document.documentElement.scrollTop > currentScrollPosition.value) {
+        hideNavbar();
       } else {
-        headerRef.value.classList.remove('-translate-y-full');
+        showNavbar();
       }
+    } else {
+      triggeredFromNav.value = false;
     }
+    console.log(props.currentSectionId);
+    console.log(document.documentElement.scrollTop);
+    currentScrollPosition.value = document.documentElement.scrollTop;
   };
 });
 </script>
@@ -67,7 +77,8 @@ onMounted(() => {
           class="px-4 text-opacity-80"
           :class="[nav.sectionIds.includes(currentSection) ? 'bg-white bg-opacity-5' : '']"
           @click="() => {
-            hideNavbar();
+            triggeredFromNav = true;
+            toggleNav();
             setCurrentSection(nav.sectionIds[0]);
           }"
         >
