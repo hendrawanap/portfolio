@@ -23,16 +23,16 @@
       Here are few technologies I’ve been working with recently:
     </p>
     <ul class="flex flex-wrap bg-white bg-opacity-5 p-2 rounded-md list-disc list-inside mb-2">
-      <li class="text-opacity-50 text-xs w-1/2">Javascript</li>
-      <li class="text-opacity-50 text-xs w-1/2">PHP</li>
-      <li class="text-opacity-50 text-xs w-1/2">Vue</li>
-      <li class="text-opacity-50 text-xs w-1/2">Laravel</li>
-      <li class="text-opacity-50 text-xs w-1/2">Bootstrap CSS</li>
-      <li class="text-opacity-50 text-xs w-1/2">Tailwind CSS</li>
-      <li class="text-opacity-50 text-xs w-1/2">Node JS</li>
-      <li class="text-opacity-50 text-xs w-1/2">Hapi</li>
-      <li class="text-opacity-50 text-xs w-1/2">Docker</li>
-      <li class="text-opacity-50 text-xs w-1/2">Firebase</li>
+      <li class="text-opacity-50 text-sm w-1/2">Javascript</li>
+      <li class="text-opacity-50 text-sm w-1/2">PHP</li>
+      <li class="text-opacity-50 text-sm w-1/2">Vue</li>
+      <li class="text-opacity-50 text-sm w-1/2">Laravel</li>
+      <li class="text-opacity-50 text-sm w-1/2">Bootstrap CSS</li>
+      <li class="text-opacity-50 text-sm w-1/2">Tailwind CSS</li>
+      <li class="text-opacity-50 text-sm w-1/2">Node JS</li>
+      <li class="text-opacity-50 text-sm w-1/2">Hapi</li>
+      <li class="text-opacity-50 text-sm w-1/2">Docker</li>
+      <li class="text-opacity-50 text-sm w-1/2">Firebase</li>
     </ul>
     <p class="text-opacity-50">
       In the future, I want to specialize in the backend development for some times,

@@ -8,7 +8,7 @@ const {
   <div class="relative">
     <div class="flex flex-col p-6 rounded-lg card" :style="{'background-image': `url(${img})`}">
       <h4 class="text-primary text-opacity-80 mb-4">{{ title }}</h4>
-      <p class="text-opacity-80 text-sm mb-4 leading-tight">
+      <p class="text-opacity-80 mb-4 text-sm leading-tight">
         {{ description }}
       </p>
       <ul class="flex text-xs mb-4">

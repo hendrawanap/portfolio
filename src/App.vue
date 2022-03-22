@@ -93,10 +93,10 @@ body h2 {
 }
 
 body h4 {
-  @apply text-lg font-semibold;
+  @apply text-xl font-semibold;
 }
 
 body p {
-  @apply text-sm;
+  @apply text-base leading-snug;
 }
 </style>

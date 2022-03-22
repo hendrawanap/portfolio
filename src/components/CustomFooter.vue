@@ -29,7 +29,7 @@ const socials = [
 </script>
 
 <template>
-  <footer class="bg-white bg-opacity-5 py-6">
+  <footer class="bg-white bg-opacity-5 py-10">
     <div class="mx-auto">
       <ul class="flex justify-center mb-3">
         <li
@@ -42,15 +42,16 @@ const socials = [
           </a>
         </li>
       </ul>
-      <p class="text-xs text-opacity-50 text-center">Built by Hendrawan Anantha</p>
-      <p class="text-xs text-opacity-25 text-center">updated on March 2022</p>
+      <p class="text-sm text-opacity-50 text-center">Built by Hendrawan Anantha</p>
+      <p class="text-sm text-opacity-25 text-center">updated on March 2022</p>
     </div>
   </footer>
 </template>
 
 <style>
 .social svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  opacity: 0.5;
 }
 </style>
