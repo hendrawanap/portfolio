@@ -51,8 +51,6 @@ onMounted(() => {
     } else {
       triggeredFromNav.value = false;
     }
-    console.log(props.currentSectionId);
-    console.log(document.documentElement.scrollTop);
     currentScrollPosition.value = document.documentElement.scrollTop;
   };
 });
