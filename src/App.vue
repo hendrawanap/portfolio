@@ -21,6 +21,7 @@ const scrollHandler = (entries, observer) => {
         > 0.75 * window.innerHeight;
       if (entry.intersectionRatio >= 0.75 || isEnough) {
         currentSectionId.value = entry.target.id;
+        history.replaceState(undefined, undefined, `#${entry.target.id}`);
       }
     }
   });
@@ -43,6 +44,7 @@ const observer = new IntersectionObserver(scrollHandler, {
 });
 
 onMounted(() => {
+  observer.observe(headlineRef.value.$el);
   observer.observe(aboutMeRef.value.$el);
   observer.observe(featuredProjectRef.value.$el);
   observer.observe(otherProjectRef.value.$el);
@@ -54,7 +56,7 @@ onMounted(() => {
   <div id="root">
     <Header :current-section-id="currentSectionId"/>
     <main class="px-8 container mx-auto">
-      <Headline class="pt-20" id="headline" ref="headlineRef"/>
+      <Headline class="pt-20" id="" ref="headlineRef"/>
       <AboutMe class="mt-16 pt-20" id="about-me" ref="aboutMeRef"/>
       <FeaturedProject class="mt-16 pt-20" id="featured-projects" ref="featuredProjectRef"/>
       <OtherProject id="other-projects" ref="otherProjectRef"/>
