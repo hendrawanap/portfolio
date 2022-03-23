@@ -56,11 +56,11 @@ onMounted(() => {
   <div id="root">
     <Header :current-section-id="currentSectionId"/>
     <main class="px-8 container mx-auto">
-      <Headline class="pt-20" id="" ref="headlineRef"/>
-      <AboutMe class="mt-16 pt-20" id="about-me" ref="aboutMeRef"/>
-      <FeaturedProject class="mt-16 pt-20" id="featured-projects" ref="featuredProjectRef"/>
+      <Headline class="pt-48 min-h-screen" id="" ref="headlineRef"/>
+      <AboutMe class="pt-24" id="about-me" ref="aboutMeRef"/>
+      <FeaturedProject class="mt-16 pt-24" id="featured-projects" ref="featuredProjectRef"/>
       <OtherProject id="other-projects" ref="otherProjectRef"/>
-      <Contact class="my-16 pt-20" id="contact-me" ref="contactRef"/>
+      <Contact class="my-16 pt-24" id="contact-me" ref="contactRef"/>
     </main>
     <Footer/>
   </div>
@@ -91,11 +91,11 @@ body .mono {
 }
 
 body h2 {
-  @apply text-4xl font-semibold;
+  @apply text-4xl sm:text-5xl font-semibold;
 }
 
 body h4 {
-  @apply text-xl font-semibold;
+  @apply text-xl sm:text-2xl font-semibold;
 }
 
 body p {
