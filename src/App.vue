@@ -59,7 +59,7 @@ onMounted(() => {
       <Headline class="pt-40 min-h-screen" id="" ref="headlineRef"/>
       <AboutMe class="pt-24" id="about-me" ref="aboutMeRef"/>
       <FeaturedProject class="mt-16 pt-24" id="featured-projects" ref="featuredProjectRef"/>
-      <OtherProject id="other-projects" ref="otherProjectRef"/>
+      <OtherProject class="mt-16" id="other-projects" ref="otherProjectRef"/>
       <Contact class="my-16 pt-24" id="contact-me" ref="contactRef"/>
     </main>
     <Footer/>
