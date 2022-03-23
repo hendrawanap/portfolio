@@ -29,6 +29,6 @@ const {
     background-position: center top;
     background-color: black;
     background-blend-mode: luminosity;
-    box-shadow: inset 0 0 0 2000px rgba(8, 25, 60, 0.95);
+    box-shadow: inset 0 0 0 2000px rgba(20, 39, 78, 0.95);
   }
 </style>
