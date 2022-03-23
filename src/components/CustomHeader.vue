@@ -16,9 +16,9 @@ const triggeredFromNav = ref(false);
 const toggleNav = () => {
   isNavOpen.value = !isNavOpen.value;
   if (isNavOpen.value) {
-    document.body.classList.add('overflow-hidden');
+    document.body.classList.add('overflow-hidden sm:overflow-auto');
   } else {
-    document.body.classList.remove('overflow-hidden');
+    document.body.classList.remove('overflow-hidden sm:overflow-auto');
   }
 };
 
@@ -108,7 +108,7 @@ onMounted(() => {
       <div
         id="main-overlay"
         class="fixed inset-0 bg-black bg-opacity-80 z-40"
-        :class="[isNavOpen ? 'block' : 'hidden']"
+        :class="[isNavOpen ? 'block sm:hidden' : 'hidden']"
         @click="toggleNav"
       />
     </Teleport>
