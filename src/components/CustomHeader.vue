@@ -74,7 +74,7 @@ onMounted(() => {
         <li
           v-for="nav, index in navList"
           :key="'nav'+index"
-          class="px-4 text-opacity-80 sm:py-2 sm:px-6 sm:rounded-sm"
+          class="py-4 text-opacity-80 sm:py-2 sm:px-6 sm:rounded-sm"
           :class="[nav.sectionIds.includes(currentSection) ? 'bg-white bg-opacity-5' : '']"
           @click="() => {
             triggeredFromNav = true;
@@ -83,7 +83,7 @@ onMounted(() => {
           }"
         >
           <a
-            class="text-lg my-2 sm:my-0 block w-full sm:w-auto"
+            class="text-lg block w-full sm:w-auto"
             :href="`#${nav.sectionIds[0]}`"
           >
             {{ nav.title }}
@@ -91,7 +91,7 @@ onMounted(() => {
         </li>
         <li class="px-4 sm:px-0 sm:pl-4">
           <a
-            class="text-lg text-primary my-6 block w-full
+            class="text-lg text-primary my-10 block w-full
               border border-primary px-4 py-2 rounded-sm
               sm:min-w-max sm:my-0"
             href="#"
