@@ -56,7 +56,7 @@ onMounted(() => {
   <div id="root">
     <Header :current-section-id="currentSectionId"/>
     <main class="px-8 container mx-auto">
-      <Headline class="pt-48 min-h-screen" id="" ref="headlineRef"/>
+      <Headline class="pt-40 min-h-screen" id="" ref="headlineRef"/>
       <AboutMe class="pt-24" id="about-me" ref="aboutMeRef"/>
       <FeaturedProject class="mt-16 pt-24" id="featured-projects" ref="featuredProjectRef"/>
       <OtherProject id="other-projects" ref="otherProjectRef"/>

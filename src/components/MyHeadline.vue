@@ -3,12 +3,14 @@
 
 <template>
   <section>
-    <p class="mono text-primary text-sm mb-2">Hi, my name is</p>
-    <h2 class="text-opacity-80 mb-3">
-      Hendrawan.<br>
-      <span class="text-opacity-50">I build website for your stuff.</span>
+    <p class="mono text-primary text-sm mb-4">Hi, my name is</p>
+    <h2 class="text-opacity-80 mb-4">
+      Hendrawan.
     </h2>
-    <p class="text-opacity-50 mb-8">
+    <h2 class="text-opacity-50 mb-6">
+      I build website for your stuff.
+    </h2>
+    <p class="text-opacity-50 mb-12">
       I’m an informatics engineering students and a fullstack web developer.
       Currently, I’m focused on learning how to build website applications and
       serve it using Cloud Computing Technologies.
