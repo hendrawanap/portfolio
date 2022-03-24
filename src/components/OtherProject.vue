@@ -27,14 +27,16 @@ const otherProjects = [
     <h4 class="text-opacity-80 text-center mb-6">
       Other Projects.
     </h4>
-    <OtherProjectCard
-      v-for="otherProject, index in otherProjects"
-      :key="'other-'+index"
-      :title="otherProject.title"
-      :description="otherProject.description"
-      :techs="otherProject.techs"
-      :github="otherProject.github"
-      class="mb-6"
-    />
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-6">
+      <OtherProjectCard
+        v-for="otherProject, index in otherProjects"
+        :key="'other-'+index"
+        :title="otherProject.title"
+        :description="otherProject.description"
+        :techs="otherProject.techs"
+        :github="otherProject.github"
+        class="mb-6 sm:mb-0"
+      />
+    </div>
  </section>
 </template>
