@@ -1,5 +1,46 @@
 <script setup>
+import emailjs from '@emailjs/browser';
+import { reactive, ref } from 'vue';
 
+const {
+  VITE_EMAIL_SERVICE_ID,
+  VITE_EMAIL_TEMPLATE_ID,
+  VITE_EMAIL_USER_ID,
+} = import.meta.env;
+
+const formRef = ref(null);
+const showAlert = ref(false);
+const alertType = ref(null);
+const form = reactive({
+  name: '',
+  email: '',
+  message: '',
+});
+
+const triggerAlert = (type) => {
+  showAlert.value = true;
+  alertType.value = type;
+  setTimeout(() => {
+    showAlert.value = false;
+    alertType.value = type;
+  }, 3000);
+};
+
+const resetForm = () => {
+  form.name = '';
+  form.email = '';
+  form.message = '';
+};
+
+const sendMessage = () => {
+  emailjs.sendForm(VITE_EMAIL_SERVICE_ID, VITE_EMAIL_TEMPLATE_ID, formRef.value, VITE_EMAIL_USER_ID)
+    .then(() => {
+      triggerAlert('success');
+      resetForm();
+    }, () => {
+      triggerAlert('error');
+    });
+};
 </script>
 
 <template>
@@ -22,37 +63,62 @@
           to me or just say hi by connect to my socials.
         </p>
       </div>
-      <form class="mt-8 md:mt-0 md:w-1/2" @submit.prevent="">
+      <form class="mt-8 md:mt-0 md:w-1/2" @submit.prevent="sendMessage" ref="formRef">
         <label for="your-name" class="text-opacity-50 mb-1 inline-block">Name</label>
         <input
           class="bg-transparent border border-white border-opacity-25 rounded-sm
             py-3 px-2 mb-3 text-opacity-80 w-full"
           type="text"
-          name="your-name"
+          name="from_name"
           id="your-name"
+          v-model="form.name"
+          required
         >
         <label for="your-email" class="text-opacity-50 mb-1 inline-block">Email Address</label>
         <input
           class="bg-transparent border border-white border-opacity-25 rounded-sm
             py-3 px-2 mb-3 text-opacity-80 w-full"
           type="email"
-          name="your-email"
+          name="from_email"
           id="your-email"
+          v-model="form.email"
+          required
         >
         <label for="your-message" class="text-opacity-50 mb-1 inline-block">Text Message</label>
         <textarea
           class="bg-transparent border border-white border-opacity-25 rounded-sm
             py-3 px-2 mb-3 text-opacity-80 w-full"
-          name="text-message"
+          name="message"
           id="your-message"
           rows="5"
+          v-model="form.message"
+          required
         ></textarea>
-        <button
-          class="py-3 px-6 border border-primary rounded-sm text-primary"
-          type="submit"
-        >
-          Send message
-        </button>
+        <div class="flex items-center">
+          <button
+            class="py-3 px-6 border border-primary rounded-sm text-primary disabled:opacity-40"
+            type="submit"
+            :disabled="showAlert"
+          >
+            Send message
+          </button>
+          <p
+            v-if="alertType === 'success'"
+            class="ml-8 bg-opacity-25 bg-green-600 py-2 px-4 rounded-full text-opacity-80
+              transition-all"
+            :class="[showAlert ? '' : 'duration-700 opacity-0']"
+          >
+            Message Sent.
+          </p>
+          <p
+            v-if="alertType === 'error'"
+            class="ml-8 bg-opacity-25 bg-red-600 py-2 px-4 rounded-full text-opacity-80
+              transition-all"
+            :class="[showAlert ? '' : 'duration-700 opacity-0']"
+          >
+            Error occured.
+          </p>
+        </div>
       </form>
     </div>
   </section>
