@@ -47,7 +47,7 @@ const techs = ['Javascript', 'PHP', 'Vue', 'Laravel', 'Boostrap CSS', 'Tailwind 
             <img
               class="absolute inset-0 w-52 h-52 object-cover
                 object-center rounded-lg saturate-0 hover:saturate-100"
-              src="../assets/profile.png"
+              src="/assets/profile.png"
               alt="profile"
             >
         </div>

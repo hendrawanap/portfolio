@@ -63,7 +63,7 @@ onMounted(() => {
     :class="[currentScrollPosition > 0 ? 'h-20' : 'h-24']"
     ref="headerRef"
   >
-    <a href="#"><img class="w-10 h-10" src="../assets/logo.svg" alt="logo"></a>
+    <a href="#"><img class="w-10 h-10" src="/assets/logo.svg" alt="logo"></a>
     <nav>
       <ul
         class="fixed top-0 bottom-0 right-0 bg-[#1E1E1E] z-50 min-w-max w-1/2 justify-center
