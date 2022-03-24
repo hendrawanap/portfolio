@@ -59,8 +59,8 @@ onMounted(() => {
 <template>
   <header
     class="flex justify-between px-6 items-center fixed top-0 left-0 right-0 z-50
-    bg-black transition-all"
-    :class="[currentScrollPosition > 0 ? 'h-20' : 'h-24']"
+    bg-black transition-all sm:px-12"
+    :class="[currentScrollPosition > 0 ? 'h-20 shadow-sm shadow-zinc-900' : 'h-24']"
     ref="headerRef"
   >
     <a href="#"><img class="w-10 h-10" src="/assets/logo.svg" alt="logo"></a>
@@ -93,7 +93,7 @@ onMounted(() => {
           <a
             class="text-lg text-primary my-10 block w-full
               border border-primary px-4 py-2 rounded-sm
-              sm:min-w-max sm:my-0"
+              sm:min-w-max sm:my-0 md:px-6 md:py-3"
             href="#"
           >
             My Resume
