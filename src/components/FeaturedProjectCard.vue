@@ -1,12 +1,61 @@
-<script setup>
+<script setup>import { computed, onMounted, ref } from 'vue';
+
 const {
   title, description, techs, github, img,
 } = defineProps(['title', 'description', 'techs', 'github', 'img']);
+
+const cardRef = ref(null);
+const imgCardRef = ref(null);
+const largeScreen = ref(false);
+const BREAKPOINT = 768;
+
+const showBgImg = () => {
+  cardRef.value.style.backgroundImage = `url(${img})`;
+};
+
+const removeBgImg = () => {
+  cardRef.value.style.backgroundImage = 'none';
+};
+
+const onResizeHandler = () => {
+  if (window.innerWidth >= BREAKPOINT && !largeScreen.value) {
+    largeScreen.value = true;
+    removeBgImg();
+  } else if (window.innerWidth < BREAKPOINT && largeScreen.value) {
+    largeScreen.value = false;
+    showBgImg();
+  }
+};
+
+onMounted(() => {
+  if (window.innerWidth >= BREAKPOINT) {
+    largeScreen.value = true;
+    removeBgImg();
+  } else {
+    showBgImg();
+  }
+
+  window.addEventListener('resize', onResizeHandler);
+});
 </script>
 
 <template>
-  <div class="relative">
-    <div class="flex flex-col p-6 rounded-lg card" :style="{'background-image': `url(${img})`}">
+  <div class="md:grid md:grid-cols-12">
+    <div
+      class="hidden p-6 rounded-lg transition-all
+        md:flex md:flex-col md:h-96 md:z-10
+        lg:h-[28rem]"
+      :class="largeScreen ? ['project-image'] : ['']"
+      ref="imgCardRef"
+      :style="{ backgroundImage: `url(${img})` }"
+    >
+    </div>
+    <div
+      class="flex flex-col p-6 rounded-lg sm:p-10
+        md:p-6 md:z-20 md:shadow-md md:shadow-slate-900"
+      :class="largeScreen ? ['project-card'] : ['project-image']"
+      ref="cardRef"
+    >
       <h4 class="text-primary text-opacity-80 mb-4">{{ title }}</h4>
       <p class="text-opacity-80 mb-4 leading-snug">
         {{ description }}
@@ -24,11 +73,70 @@ const {
 </template>
 
 <style scoped>
-  .card {
+  .project-image {
     background-size: cover;
     background-position: center top;
     background-color: black;
     background-blend-mode: luminosity;
     box-shadow: inset 0 0 0 2000px rgba(20, 39, 78, 0.95);
+  }
+
+  @media screen and (min-width: 768px) {
+    .alt-side .project-card {
+      grid-column-start: 1;
+      grid-column-end: -5;
+      grid-row-start: -2;
+      grid-row-end: 1;
+      @apply bg-secondary;
+    }
+
+    .alt-side .project-image {
+      grid-column-start: -10;
+      grid-column-end: -1;
+      grid-row-start: -3;
+      grid-row-end: 2;
+    }
+
+    .project-card {
+      grid-column-start: 5;
+      grid-column-end: -1;
+      grid-row-start: -2;
+      grid-row-end: 1;
+      @apply bg-secondary;
+    }
+
+    .project-image {
+      grid-column-start: 1;
+      grid-column-end: 10;
+      grid-row-start: -3;
+      grid-row-end: 2;
+    }
+
+    .project-image:hover {
+      box-shadow: inset 0 0 0 2000px rgba(20, 39, 78, 0.15);
+      background-color: transparent;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .alt-side .project-card {
+      grid-column-start: -6;
+      grid-column-end: 1;
+    }
+
+    .alt-side .project-image {
+      grid-column-start: -1;
+      grid-column-end: -9;
+    }
+
+    .project-card {
+      grid-column-start: 6;
+      grid-column-end: -1;
+    }
+
+    .project-image {
+      grid-column-start: 1;
+      grid-column-end: 9;
+    }
   }
 </style>
