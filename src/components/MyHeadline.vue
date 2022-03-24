@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="mx-auto max-w-5xl flex flex-col justify-center items-start">
+  <section class="flex flex-col justify-center items-start">
     <p class="mono text-primary text-sm mb-4 md:text-base">Hi, my name is</p>
     <h2 class="text-opacity-80 mb-4 md:text-6xl xl:text-7xl">
       Hendrawan<span class="hidden text-opacity-80 lg:inline"> Anantha</span>.

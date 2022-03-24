@@ -41,7 +41,7 @@ const featuredProjects = [
 </script>
 
 <template>
-  <section class="max-w-5xl mx-auto xl:px-8">
+  <section>
     <div class="flex items-center mb-8 w-full">
       <svg class="mr-3 mt-1" height="2" width="32">
         <line class="stroke-primary stroke-2" x1="0" y1="0" x2="32" y2="0" />

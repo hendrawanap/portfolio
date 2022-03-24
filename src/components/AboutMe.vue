@@ -4,8 +4,7 @@ const techs = ['Javascript', 'PHP', 'Vue', 'Laravel', 'Boostrap CSS', 'Tailwind 
 
 <template>
   <section
-    class="flex flex-col sm:flex-row sm:justify-between
-      items-center max-w-5xl xl:px-8 mx-auto"
+    class="flex flex-col sm:flex-row sm:justify-between items-center"
   >
     <div class="sm:flex-1 sm:mr-12 sm:max-w-lg">
       <div class="flex items-center mb-8 w-full">

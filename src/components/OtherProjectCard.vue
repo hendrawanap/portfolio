@@ -5,7 +5,7 @@ const {
 </script>
 
 <template>
-  <div class="flex flex-col p-6 xl:p-10 rounded-lg bg-secondary">
+  <div class="flex flex-col p-6 xl:p-8 rounded-lg bg-secondary">
       <h4 class="text-primary text-opacity-80 mb-4">{{ title }}</h4>
       <p class="text-opacity-80 mb-4 leading-snug flex-1">
         {{ description }}

@@ -55,7 +55,7 @@ onMounted(() => {
 <template>
   <div id="root">
     <Header :current-section-id="currentSectionId"/>
-    <main class="px-8 container mx-auto">
+    <main class="px-8 container max-w-5xl mx-auto">
       <Headline class="min-h-screen" id="" ref="headlineRef"/>
       <AboutMe class="pt-24" id="about-me" ref="aboutMeRef"/>
       <FeaturedProject class="mt-16 pt-24" id="featured-projects" ref="featuredProjectRef"/>
