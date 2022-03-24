@@ -48,16 +48,18 @@ const featuredProjects = [
       </svg>
       <h4 class="text-opacity-80">Things I've Built.</h4>
     </div>
-    <FeaturedProjectCard
-      v-for="featuredProject, index in featuredProjects"
-      :key="'featured-'+index"
-      :title="featuredProject.title"
-      :description="featuredProject.description"
-      :techs="featuredProject.techs"
-      :github="featuredProject.github"
-      :img="featuredProject.img"
-      class="mb-6 md:mb-10 lg:mb-12"
-      :class="index % 2 === 0 ? '' : 'alt-side'"
-    />
+    <div class="md:pl-10">
+      <FeaturedProjectCard
+        v-for="featuredProject, index in featuredProjects"
+        :key="'featured-'+index"
+        :title="featuredProject.title"
+        :description="featuredProject.description"
+        :techs="featuredProject.techs"
+        :github="featuredProject.github"
+        :img="featuredProject.img"
+        class="mb-6 md:mb-10 lg:mb-12"
+        :class="index % 2 === 0 ? '' : 'alt-side'"
+      />
+    </div>
   </section>
 </template>
