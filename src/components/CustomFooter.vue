@@ -29,7 +29,7 @@ const socials = [
 </script>
 
 <template>
-  <footer class="bg-white bg-opacity-5 py-10">
+  <footer class="bg-white bg-opacity-5 py-10 sm:py-12">
     <div class="mx-auto">
       <ul class="flex justify-center mb-3">
         <li
@@ -42,8 +42,8 @@ const socials = [
           </a>
         </li>
       </ul>
-      <p class="text-sm text-opacity-50 text-center">Built by Hendrawan Anantha</p>
-      <p class="text-sm text-opacity-25 text-center">updated on March 2022</p>
+      <p class="text-sm text-opacity-50 text-center sm:text-base">Built by Hendrawan Anantha</p>
+      <p class="text-sm text-opacity-25 text-center sm:text-base">updated on March 2022</p>
     </div>
   </footer>
 </template>
@@ -53,5 +53,12 @@ const socials = [
   width: 18px;
   height: 18px;
   opacity: 0.5;
+}
+
+@media screen and (min-width: 640px) {
+  .social svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 </style>
