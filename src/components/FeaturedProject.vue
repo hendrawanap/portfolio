@@ -1,7 +1,7 @@
 <script setup>
 import FeaturedProjectCard from './FeaturedProjectCard.vue';
 
-const BASE_IMG_PATH = '/src/assets/images';
+const BASE_IMG_PATH = import.meta.env.MODE === 'development' ? '/src/assets/images' : '/assets/images';
 
 const featuredProjects = [
   {
