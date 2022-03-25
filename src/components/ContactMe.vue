@@ -94,7 +94,7 @@ const sendMessage = () => {
           v-model="form.message"
           required
         ></textarea>
-        <div class="flex items-center">
+        <div class="flex flex-col items-start sm:flex-row sm:items-center">
           <button
             class="py-3 px-6 border border-primary rounded-sm text-primary disabled:opacity-40"
             type="submit"
@@ -104,16 +104,16 @@ const sendMessage = () => {
           </button>
           <p
             v-if="alertType === 'success'"
-            class="ml-8 bg-opacity-25 bg-green-600 py-2 px-4 rounded-full text-opacity-80
-              transition-all"
+            class="mt-3 sm:mt-0 sm:ml-8 bg-opacity-25 bg-green-600 py-2 px-4 rounded-full
+              text-opacity-80 transition-all"
             :class="[showAlert ? '' : 'duration-700 opacity-0']"
           >
             Message Sent.
           </p>
           <p
             v-if="alertType === 'error'"
-            class="ml-8 bg-opacity-25 bg-red-600 py-2 px-4 rounded-full text-opacity-80
-              transition-all"
+            class="mt-3 sm:mt-0 sm:ml-8 bg-opacity-25 bg-red-600 py-2 px-4 rounded-full
+              text-opacity-80 transition-all"
             :class="[showAlert ? '' : 'duration-700 opacity-0']"
           >
             Error occured.
