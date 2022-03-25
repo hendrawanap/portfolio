@@ -1,8 +1,8 @@
 <script setup>import { computed, onMounted, ref } from 'vue';
 
 const {
-  title, description, techs, github, img,
-} = defineProps(['title', 'description', 'techs', 'github', 'img']);
+  title, description, techs, github, img, altSide,
+} = defineProps(['title', 'description', 'techs', 'github', 'img', 'alt-side']);
 
 const cardRef = ref(null);
 const imgCardRef = ref(null);
@@ -40,7 +40,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="md:grid md:grid-cols-12">
+  <div
+    class="md:grid md:grid-cols-12"
+    :class="[altSide ? 'alt-side' : '']"
+    data-aos="fade">
     <div
       class="hidden p-6 rounded-lg transition-all
         md:flex md:flex-col md:h-96 md:z-10
@@ -55,6 +58,7 @@ onMounted(() => {
         md:p-6 md:z-20 md:shadow-md md:shadow-slate-900"
       :class="largeScreen ? ['project-card'] : ['project-image']"
       ref="cardRef"
+      :data-aos="altSide ? 'fade-right' : 'fade-left'"
     >
       <h4 class="text-primary text-opacity-80 mb-4">{{ title }}</h4>
       <p class="text-opacity-80 mb-4 leading-snug">

@@ -6,7 +6,7 @@ const techs = ['Javascript', 'PHP', 'Vue', 'Laravel', 'Boostrap CSS', 'Tailwind 
   <section
     class="flex flex-col sm:flex-row sm:justify-between items-center"
   >
-    <div class="sm:flex-1 sm:mr-12 sm:max-w-lg">
+    <div class="sm:flex-1 sm:mr-12 sm:max-w-lg" data-aos="fade-right">
       <div class="flex items-center mb-8 w-full">
         <svg class="mr-3 mt-1" height="2" width="32">
           <line class="stroke-primary stroke-2" x1="0" y1="0" x2="32" y2="0" />
@@ -43,7 +43,7 @@ const techs = ['Javascript', 'PHP', 'Vue', 'Laravel', 'Boostrap CSS', 'Tailwind 
         then would do DevOps stuffs.
       </p>
     </div>
-    <div class="relative h-52 w-52 mt-16 cursor-pointer lg:w-72 lg:h-72">
+    <div class="relative h-52 w-52 mt-16 cursor-pointer lg:w-72 lg:h-72" data-aos="fade-left">
       <div
         class="bg-white w-52 h-52 rounded-lg absolute -top-3 -left-3 z-20
           hover:top-0 hover:left-0 transition-all lg:w-72 lg:h-72"

@@ -24,7 +24,7 @@ const otherProjects = [
 </script>
 
 <template>
- <section>
+ <section data-aos="fade">
     <h4 class="text-opacity-80 text-center mb-6">
       Other Projects.
     </h4>
@@ -37,6 +37,7 @@ const otherProjects = [
         :techs="otherProject.techs"
         :github="otherProject.github"
         class="mb-6 sm:mb-0"
+        data-aos="fade-up"
       />
     </div>
  </section>

@@ -54,7 +54,7 @@ const featuredProjects = [
         :github="featuredProject.github"
         :img="featuredProject.img"
         class="mb-6 md:mb-10 lg:mb-12"
-        :class="index % 2 === 0 ? '' : 'alt-side'"
+        :alt-side="index % 2 === 1"
       />
     </div>
   </section>
