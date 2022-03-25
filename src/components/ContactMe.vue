@@ -87,7 +87,7 @@ const sendMessage = () => {
         <label for="your-message" class="text-opacity-50 mb-1 inline-block">Text Message</label>
         <textarea
           class="bg-transparent border border-white border-opacity-25 rounded-sm
-            py-3 px-2 mb-3 text-opacity-80 w-full"
+            py-3 px-2 mb-4 text-opacity-80 w-full"
           name="message"
           id="your-message"
           rows="5"
@@ -96,11 +96,16 @@ const sendMessage = () => {
         ></textarea>
         <div class="flex flex-col items-start sm:flex-row sm:items-center">
           <button
-            class="py-3 px-6 border border-primary rounded-sm text-primary disabled:opacity-40"
+            class="flex border border-primary rounded-sm disabled:opacity-40"
             type="submit"
             :disabled="showAlert"
           >
-            Send message
+            <span
+              class="py-3 px-6 text-primary ring-1 ring-primary bg-black
+                transition-transform hover:-translate-x-1 hover:-translate-y-1"
+            >
+              Send message
+            </span>
           </button>
           <p
             v-if="alertType === 'success'"

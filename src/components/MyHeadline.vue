@@ -16,12 +16,15 @@
       serve it using Cloud Computing Technologies.
     </p>
     <a
-      class="text-primary text-opacity-80 py-3 px-6
-        border border-primary rounded-sm inline-block
-        md:text-lg md:px-8 md:py-4"
+      class="border border-primary rounded-sm inline-flex"
       href="#featured-projects"
     >
-      View my projects
+      <span
+        class="ring-1 ring-primary text-primary bg-black py-3 px-6 text-opacity-80
+          md:text-lg md:px-8 md:py-4 transition-all hover:-translate-x-1 hover:-translate-y-1"
+      >
+        View my projects
+      </span>
     </a>
   </section>
 </template>

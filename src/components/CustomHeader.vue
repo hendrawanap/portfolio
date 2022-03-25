@@ -92,13 +92,15 @@ onMounted(() => {
         </li>
         <li class="px-4 sm:px-0 sm:pl-4">
           <a
-            class="text-lg text-primary my-10 block w-full
-              border border-primary px-4 py-2 rounded-sm
-              sm:min-w-max sm:my-0 md:px-6 md:py-3"
+            class="flex border border-primary rounded-sm my-10"
             :href="resumeURL"
             target="_blank"
           >
-            My Resume
+            <span class="ring-1 ring-primary text-lg text-primary px-4 py-2 w-full
+              bg-[#1E1E1E] sm:bg-black sm:min-w-max sm:my-0 md:px-6 md:py-3
+              transition-all hover:-translate-x-1 hover:-translate-y-1">
+              My Resume
+            </span>
           </a>
         </li>
       </ul>
