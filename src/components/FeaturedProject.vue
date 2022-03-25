@@ -13,7 +13,7 @@ const featuredProjects = [
   },
   {
     title: 'Caloreal',
-    description: 'A web application to facilitate informatics engineering freshmen student of FILKOM UB in their journey at 2021 student orientation program.',
+    description: 'A web application to help people in measuring their calories requirements and plan their diet accordingly.',
     techs: ['Laravel', 'Livewire', 'Bootstrap CSS'],
     github: 'https://github.com/hendrawanap/daking',
     img: `${BASE_IMG_PATH}/caloreal.png`,
