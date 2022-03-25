@@ -1,23 +1,24 @@
 <script setup>
 import OtherProjectCard from './OtherProjectCard.vue';
+
 const otherProjects = [
   {
     title: 'Quiz API',
     description: 'A backend/api application to serve quiz data to the quiz app android application and quiz admin web application.',
     techs: ['Node JS', 'Hapi', 'Firebase', 'GCP'],
-    github: '#',
+    github: 'https://github.com/hendrawanap/quiz-api',
   },
   {
     title: 'Quiz Admin',
     description: 'A web application to manage quiz data.',
     techs: ['Vue', 'Vite', 'Tailwind CSS', 'Firebase'],
-    github: '#',
+    github: 'https://github.com/hendrawanap/quiz-admin-vue3',
   },
   {
     title: 'Management Competition 2022',
     description: 'Maintaining and adding features for existing FBE UAJY event “Management Competition 2022” website.',
     techs: ['Laravel', 'Bootstrap CSS'],
-    github: '#',
+    github: 'https://github.com/hendrawanap/uajy_mc',
   },
 ];
 </script>

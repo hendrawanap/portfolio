@@ -5,6 +5,7 @@ const props = defineProps(['currentSectionId']);
 const headerRef = ref(null);
 const isNavOpen = ref(false);
 const currentSection = ref(null);
+const resumeURL = '/assets/resume/resume-1.pdf';
 const navList = [
   { sectionIds: ['about-me'], title: 'About' },
   { sectionIds: ['featured-projects', 'other-projects'], title: 'Projects' },
@@ -94,7 +95,8 @@ onMounted(() => {
             class="text-lg text-primary my-10 block w-full
               border border-primary px-4 py-2 rounded-sm
               sm:min-w-max sm:my-0 md:px-6 md:py-3"
-            href="#"
+            :href="resumeURL"
+            target="_blank"
           >
             My Resume
           </a>
