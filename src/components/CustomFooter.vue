@@ -46,7 +46,7 @@ const socials = [
         Built by Hendrawan Anantha
       </p>
       <p class="text-sm text-opacity-25 text-center sm:text-base">
-        updated on August 2023
+        updated at August 2023
       </p>
     </div>
   </footer>
