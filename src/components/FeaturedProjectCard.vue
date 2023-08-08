@@ -70,7 +70,7 @@ onMounted(() => {
         {{ description }}
       </p>
 
-      <ul class="flex text-sm mb-4">
+      <ul class="flex flex-wrap text-sm mb-4">
         <li
           v-for="(tech, index) in techs"
           :key="'tech-' + index"
