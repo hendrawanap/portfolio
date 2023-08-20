@@ -8,14 +8,7 @@ const featuredProjects = [
     title: "Hospital's Outpatient System",
     description:
       "A web-based hospital's outpatient system which mainly consists of outpatient's registration & queues functionalities. Applied 'Clean Architecture' concepts in design & implementation process.",
-    techs: [
-      'SvelteKit',
-      'Tailwind CSS',
-      'Express.js',
-      'TypeScript',
-      'MongoDB',
-      'Pusher',
-    ],
+    techs: ['SvelteKit', 'Tailwind CSS', 'Express.js', 'TypeScript', 'MongoDB', 'Pusher'],
     github: '#',
     img: `${BASE_IMG_PATH}/outpatient-system.png`,
   },

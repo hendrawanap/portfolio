@@ -16,11 +16,7 @@ const { title, description, techs, github } = defineProps([
     </p>
 
     <ul class="flex text-sm mb-4">
-      <li
-        v-for="(tech, index) in techs"
-        :key="'tech-' + index"
-        class="mr-2 text-opacity-50"
-      >
+      <li v-for="(tech, index) in techs" :key="'tech-' + index" class="mr-2 text-opacity-50">
         {{ tech }}
       </li>
     </ul>

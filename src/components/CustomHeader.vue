@@ -17,9 +17,9 @@ const triggeredFromNav = ref(false);
 const toggleNav = () => {
   isNavOpen.value = !isNavOpen.value;
   if (isNavOpen.value) {
-    document.body.classList.add('overflow-hidden sm:overflow-auto');
+    document.body.classList.add('overflow-hidden', 'sm:overflow-auto');
   } else {
-    document.body.classList.remove('overflow-hidden sm:overflow-auto');
+    document.body.classList.remove('overflow-hidden', 'sm:overflow-auto');
   }
 };
 
@@ -59,10 +59,8 @@ onMounted(() => {
 
 <template>
   <header
-    class="flex justify-between px-6 items-center fixed top-0 left-0 right-0 z-50 bg-black transition-all sm:px-12"
-    :class="[
-      currentScrollPosition > 0 ? 'h-20 shadow-sm shadow-zinc-900' : 'h-24',
-    ]"
+    class="flex justify-between px-6 items-center fixed top-0 left-0 right-0 z-50 bg-black transition-transform sm:px-12"
+    :class="[currentScrollPosition > 0 ? 'h-20 shadow-sm shadow-zinc-900' : 'h-24']"
     ref="headerRef"
   >
     <a href="#"><img class="w-10 h-10" src="/assets/logo.svg" alt="logo" /></a>
@@ -75,11 +73,7 @@ onMounted(() => {
           v-for="(nav, index) in navList"
           :key="'nav' + index"
           class="py-4 text-opacity-80 sm:py-2 sm:px-6 sm:rounded-sm"
-          :class="[
-            nav.sectionIds.includes(currentSection)
-              ? 'bg-white bg-opacity-5'
-              : '',
-          ]"
+          :class="[nav.sectionIds.includes(currentSection) ? 'bg-white bg-opacity-5' : '']"
           @click="
             () => {
               triggeredFromNav = true;
@@ -88,19 +82,12 @@ onMounted(() => {
             }
           "
         >
-          <a
-            class="text-lg block w-full sm:w-auto"
-            :href="`#${nav.sectionIds[0]}`"
-          >
+          <a class="text-lg block w-full sm:w-auto" :href="`#${nav.sectionIds[0]}`">
             {{ nav.title }}
           </a>
         </li>
         <li class="px-4 sm:px-0 sm:pl-4">
-          <a
-            class="flex border border-primary rounded-sm my-10"
-            :href="resumeURL"
-            target="_blank"
-          >
+          <a class="flex border border-primary rounded-sm my-10" :href="resumeURL" target="_blank">
             <span
               class="ring-1 ring-primary text-lg text-primary px-4 py-2 w-full bg-[#1E1E1E] sm:bg-black sm:min-w-max sm:my-0 md:px-6 md:py-3 transition-all hover:-translate-x-1 hover:-translate-y-1"
             >

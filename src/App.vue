@@ -17,8 +17,8 @@ const currentSectionId = ref(null);
 const scrollHandler = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      const isEnough = entry.intersectionRatio * entry.target.offsetHeight
-        > 0.75 * window.innerHeight;
+      const isEnough =
+        entry.intersectionRatio * entry.target.offsetHeight > 0.75 * window.innerHeight;
       if (entry.intersectionRatio >= 0.75 || isEnough) {
         currentSectionId.value = entry.target.id;
         history.replaceState(undefined, undefined, `#${entry.target.id}`);
@@ -40,7 +40,8 @@ const buildThresholdList = ({ steps } = { steps: 10 }) => {
 };
 
 const observer = new IntersectionObserver(scrollHandler, {
-  root: document, threshold: buildThresholdList(),
+  root: document,
+  threshold: buildThresholdList(),
 });
 
 onMounted(() => {
@@ -54,15 +55,15 @@ onMounted(() => {
 
 <template>
   <div id="root">
-    <Header :current-section-id="currentSectionId"/>
+    <Header :current-section-id="currentSectionId" />
     <main class="px-8 container max-w-5xl mx-auto">
-      <Headline class="min-h-screen" id="" ref="headlineRef"/>
-      <AboutMe class="pt-24" id="about-me" ref="aboutMeRef"/>
-      <FeaturedProject class="mt-16 pt-24" id="featured-projects" ref="featuredProjectRef"/>
-      <OtherProject class="mt-16" id="other-projects" ref="otherProjectRef"/>
-      <Contact class="my-16 pt-24" id="contact-me" ref="contactRef"/>
+      <Headline class="min-h-screen" id="" ref="headlineRef" />
+      <AboutMe class="pt-24" id="about-me" ref="aboutMeRef" />
+      <FeaturedProject class="mt-16 pt-24" id="featured-projects" ref="featuredProjectRef" />
+      <OtherProject class="mt-16" id="other-projects" ref="otherProjectRef" />
+      <Contact class="my-16 pt-24" id="contact-me" ref="contactRef" />
     </main>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -83,7 +84,7 @@ body li,
 body label,
 body input,
 body textarea {
-  @apply text-white
+  @apply text-white;
 }
 
 body .mono {

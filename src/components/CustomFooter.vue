@@ -42,12 +42,8 @@ const socials = [
           </a>
         </li>
       </ul>
-      <p class="text-sm text-opacity-50 text-center sm:text-base">
-        Built by Hendrawan Anantha
-      </p>
-      <p class="text-sm text-opacity-25 text-center sm:text-base">
-        updated at August 2023
-      </p>
+      <p class="text-sm text-opacity-50 text-center sm:text-base">Built by Hendrawan Anantha</p>
+      <p class="text-sm text-opacity-25 text-center sm:text-base">updated at August 2023</p>
     </div>
   </footer>
 </template>

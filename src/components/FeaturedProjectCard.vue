@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 const { title, description, techs, github, img, altSide } = defineProps([
   'title',
@@ -46,11 +46,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    class="md:grid md:grid-cols-12"
-    :class="[altSide ? 'alt-side' : '']"
-    data-aos="fade"
-  >
+  <div class="md:grid md:grid-cols-12" :class="[altSide ? 'alt-side' : '']" data-aos="fade">
     <div
       class="hidden p-6 rounded-lg transition-all md:flex md:flex-col md:h-96 md:z-10 lg:h-[28rem]"
       :class="largeScreen ? ['project-image'] : ['']"
@@ -62,7 +58,7 @@ onMounted(() => {
       class="flex flex-col p-6 rounded-lg sm:p-10 md:p-6 md:z-20 md:shadow-md md:shadow-slate-900"
       :class="largeScreen ? ['project-card'] : ['project-image']"
       ref="cardRef"
-      :data-aos="altSide ? 'fade-right' : 'fade-left'"
+      data-aos="fade"
     >
       <h4 class="text-primary text-opacity-80 mb-4">{{ title }}</h4>
 
@@ -71,11 +67,7 @@ onMounted(() => {
       </p>
 
       <ul class="flex flex-wrap text-sm mb-4">
-        <li
-          v-for="(tech, index) in techs"
-          :key="'tech-' + index"
-          class="mr-2 text-opacity-50"
-        >
+        <li v-for="(tech, index) in techs" :key="'tech-' + index" class="mr-2 text-opacity-50">
           {{ tech }}
         </li>
       </ul>
