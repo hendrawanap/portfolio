@@ -1,20 +1,16 @@
 <script setup>
 const techs = [
   'JavaScript',
+  'Golang',
   'PHP',
-  'Java',
-  'Node.js',
-  'Vue.js',
+  'Astro',
   'SvelteKit',
   'Express.js',
   'Laravel',
-  'Spring Boot',
-  'Boostrap CSS',
   'Tailwind CSS',
   'Docker',
   'MySQL',
   'MongoDB',
-  'Firebase',
 ];
 </script>
 
@@ -30,18 +26,19 @@ const techs = [
       </div>
 
       <p class="text-opacity-50 text-justify mb-2 md:ml-10">
-        Hi, my name is Hendra. I enjoy build things using code. I have interest in computer science
-        and tech stuffs especially in software engineering. I started to build website since my
-        second semester in college.
+        Hi, my name is Hendra. I enjoy building things using code. I have an interest in computer science
+        and tech stuff, especially in software engineering. I have broad experience in web development from
+        making landing pages to building complex web applications using diverse tech stacks.
       </p>
 
       <p class="text-opacity-50 text-justify mb-2 md:ml-10">
-        Currently, I’m focused on learning and looking for opportunities in Back-End Development,
-        DevOps, and Cloud Computing.
+        Currently, I’m focused on sharpening my technical skills, especially in Backend Development, DevOps, and
+        Cloud Computing, while also trying to make an impact on society by building effective tech solutions with
+        my colleagues.
       </p>
 
       <p class="text-opacity-50 text-justify mb-2 md:ml-10">
-        Here are few technologies I’ve been working with recently:
+        Here are a few technologies I’ve been working with recently:
       </p>
 
       <ul
@@ -57,8 +54,9 @@ const techs = [
       </ul>
 
       <p class="text-opacity-50 text-justify md:ml-10">
-        In the future, I want to specialize in the backend development for some times, then would do
-        DevOps stuffs.
+        In the future, I want to be part of the people who provide a safe & encouraging place for
+        developers and anyone with them to be able to build things that society needs and brings
+        happiness 💙.
       </p>
     </div>
 
